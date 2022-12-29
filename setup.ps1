@@ -26,13 +26,13 @@ Set-NetFirewallProfile -Profile Domain,Public,Private -Enabled False
 
 $url = 'https://www.win-rar.com/fileadmin/winrar-versions/winrar/winrar-x64-611.exe'
 
-$localPath = $env:TEMP + '\winrar.exe'
+$localPath = $env:USERPROFILE + '\Desktop\winrar.exe'
 
 Invoke-WebRequest $url -OutFile $localPath
 
-Start-Process -FilePath $localPath -Verb RunAs -Wait
+$url = 'https://telegram.org/dl/desktop/win64'
 
-Remove-Item $localPath
+$localPath = $env:USERPROFILE + '\Desktop\telegram.exe'
 
-
+Invoke-WebRequest $url -OutFile $localPath
 
